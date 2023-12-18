@@ -7,16 +7,16 @@
           :src="
             this.$store.state.themeObj.center_smailimg
               ? this.$store.state.themeObj.center_smailimg
-              : 'static/img/img01.jpg'
+              : img
           "
           alt=""
         />
         <h1 v-if="this.$store.state.themeObj.user_start != 0">
-          <span>请别再呼唤我为孤独之人</span>
+          <span>{{text}}</span>
         </h1>
       </div>
       <div class="r1-body">
-        <p>三更</p>
+        <p>banx</p>
         <div class="catch-me">
           <div class="">
             <el-tooltip class="item" content="Github" placement="top">
@@ -119,9 +119,11 @@ export default {
       going: false, //是否正在执行上滑动作
       browseList: "", //热门文章 浏览量最多
       artCommentList: "", //最新评论
+      img: 'static/img/rightList-img.jpg', // 右侧的图片
+      text:'', //图片下方的文字
       catchMeObj: {
         //个人信息
-        git: "https://gitee.com",
+        git: "https://github.com",
         qq: "/static/img/qq.png",
         sina: "https://weibo.com",
         wechat: "/static/img/qq.jpg",

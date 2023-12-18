@@ -399,7 +399,7 @@ const Typeit = (isAimee,emId) =>{
             speech：所有的speech。
          ***/
 
-        var world = "sangeng"
+        //var world = "sangeng"
         theater.describe("Luke", .9, emId);
         // conosle.log()
         theater.on("*", function (eventName, originalEvent, sceneName, arg) {//做点什么
@@ -415,9 +415,10 @@ const Typeit = (isAimee,emId) =>{
                 });
 
         theater
-                .write("Luke:Hello!",1000)
+                //.write("Luke:Hello!",1000)
 //                .write("Vader:I am your father.", toggleClass)
-                .write("Luke:Hi,"+world, 500)
+                //.write("Luke:Hi,"+world, 500)
+                .write("Luke:Hello World.", 500)
                 .write({ name: "call", args: [kill, true] })
                 .write(function () { theater.play(true); });
         function kill () {
