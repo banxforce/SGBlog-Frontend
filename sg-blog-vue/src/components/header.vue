@@ -23,7 +23,7 @@
 								<i class="fa fa-fw fa-user-circle userImg"></i>
 								<ul class="haslogin-info">
 									<li>
-										<a href="#/UserInfo">个人中心</a>
+										<a href="/UserInfo">个人中心</a>
 									</li>
 									<li>
 										<a href="javascript:void(0);" @click="userlogout">退出登录</a>

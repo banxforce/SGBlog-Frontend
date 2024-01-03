@@ -7,7 +7,7 @@
             </span>
             <header>
                 <h1>
-                    <a :href="'#/DetailShare?aid='+detailObj.id" target="_blank">
+                    <a :href="'/DetailShare?aid='+detailObj.id" target="_blank">
                         {{detailObj.title}}
                     </a>
                 </h1>
@@ -16,7 +16,7 @@
                     <i class="fa fa-fw fa-eye"></i>{{detailObj.viewCount}} 次围观 •
                 </h2>
                 <div class="ui label">
-                    <a :href="'#/Share?classId='+detailObj.categoryId">{{detailObj.categoryName}}</a>
+                    <a :href="'/Share?classId='+detailObj.categoryId">{{detailObj.categoryName}}</a>
                 </div>
             </header>
             <div class="article-content markdown-body" v-html="detailObj.content"></div>

@@ -22,7 +22,7 @@
                               :before-upload="beforeAvatarUpload">
                               <img   v-if="userInfoObj.avatar" :src="userInfoObj.avatar?userInfoObj.avatar:'static/img/tou.jpg'"  :onerror="$store.state.errorImg" class="avatar">
                               <i v-else class="el-icon-plus avatar-uploader-icon"></i>
-                              <div slot="tip" class="el-upload__tip">点击上传头像，只能上传jpg/png文件，且不超过1mb</div>
+                              <div slot="tip" class="el-upload__tip">点击上传头像，只能上传jpg/png文件，且不超过2mb</div>
                             </el-upload>
                         </li>
                         <li class="username">
@@ -114,13 +114,13 @@ import store from '../store'
             },
             beforeAvatarUpload(file) {//判断头像大小
                 const isJPG = file.type == 'image/png'||file.type=='image/jpg'||file.type=='image/jpeg';
-                const isLt2M = file.size / 1024 / 1024 < 1;
+                const isLt2M = file.size / 1024 / 1024 < 2;
                 // console.log(file);
                 if (!isJPG) {
                   this.$message.error('上传头像图片只能是 JPG/JPEG/PNG 格式!');
                 }
                 if (!isLt2M) {
-                  this.$message.error('上传头像图片大小不能超过 1MB!');
+                  this.$message.error('上传头像图片大小不能超过 2MB!');
                 }
                 return isJPG && isLt2M;
             },

@@ -41,6 +41,7 @@
                     <li class="tmsg-c-item" v-for="(item,index) in commentList" :key="'common'+index">
                         <article class="">
                             <header>
+                                <!-- TODO 评论头像 -->
                                 <img  :src="$store.state.errorImg"  :onerror="$store.state.errorImg">
                                 <div class="i-name">
                                     {{item.username}}
@@ -63,6 +64,7 @@
                             <li class="tmsg-c-item" v-for="(citem,cindex) in item.children" :key="'citem'+cindex">
                                 <article class="">
                                     <header>
+                                        <!-- 子评论头像 -->
                                             <img :src="$store.state.errorImg"  :onerror="$store.state.errorImg">
                                             <div class="i-name">
                                                 {{citem.username}} <span>回复</span> {{citem.toCommentUserName}}
