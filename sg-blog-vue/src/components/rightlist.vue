@@ -20,14 +20,14 @@
         <div class="catch-me">
           <div class="">
             <el-tooltip class="item" content="Github" placement="top">
-              <a :href="catchMeObj.git" target="_blank"
-                ><i class="fa fa-fw fa-github"></i
-              ></a>
+              <a :href="catchMeObj.git" target="_blank">
+                <i class="fa fa-fw fa-github"></i>
+              </a>
             </el-tooltip>
             <el-tooltip class="item" effect="dark" content="QQ" placement="top">
-              <a :href="catchMeObj.qq" target="_blank"
-                ><i class="fa fa-fw fa-qq"></i
-              ></a>
+              <a :href="catchMeObj.qq" target="_blank">
+                <i class="fa fa-fw fa-qq"></i>
+              </a>
             </el-tooltip>
             <el-tooltip
               class="item"
@@ -35,9 +35,9 @@
               content="微博"
               placement="top"
             >
-              <a :href="catchMeObj.sina" target="_blank"
-                ><i class="fa fa-fw fa-weibo"></i
-              ></a>
+              <a :href="catchMeObj.sina" target="_blank">
+                <i class="fa fa-fw fa-weibo"></i>
+              </a>
             </el-tooltip>
           </div>
           <div class="">
@@ -124,10 +124,10 @@ export default {
       catchMeObj: {
         //个人信息
         git: "https://github.com",
-        qq: "/static/img/qq.png",
+        qq: "https://im.qq.com/index/",
         sina: "https://weibo.com",
-        wechat: "/static/img/qq.jpg",
-        csdn: "http://www.csdn.cn",
+        wechat: "https://weixin.qq.com/",
+        csdn: "https://www.csdn.cn",
         job: "https://www.baidu.com",
       },
     };

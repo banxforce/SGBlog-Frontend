@@ -79,7 +79,7 @@
                             <span>{{userInfoObj.sex==0?'男':'女'}}</span>
                         </li>
 
-                     
+
                     </ul>
 
                 </section>
@@ -96,7 +96,7 @@ import store from '../store'
         name: 'UserInfo',
         data() { //选项 / 数据
             return {
-                uploadURL:'',
+                uploadURL:'', // 上传的地址，在create中初始化
                 isEdit: false,
                 userInfo:{},//本地存储的用户信
                 userInfoObj:'',//用户的信息

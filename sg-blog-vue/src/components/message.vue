@@ -41,8 +41,8 @@
                     <li class="tmsg-c-item" v-for="(item,index) in commentList" :key="'common'+index">
                         <article class="">
                             <header>
-                                <!-- TODO 评论头像 -->
-                                <img  :src="$store.state.errorImg"  :onerror="$store.state.errorImg">
+                              <!--  如果用户未设置头像，或字段出现问题，显示 errorImg -->
+                                <img  :src="item.avatar || $store.state.errorImg"  :onerror="$store.state.errorImg" alt="">
                                 <div class="i-name">
                                     {{item.username}}
                                 </div>
@@ -65,7 +65,7 @@
                                 <article class="">
                                     <header>
                                         <!-- 子评论头像 -->
-                                            <img :src="$store.state.errorImg"  :onerror="$store.state.errorImg">
+                                            <img :src="item.avatar || $store.state.errorImg"  :onerror="$store.state.errorImg" alt="">
                                             <div class="i-name">
                                                 {{citem.username}} <span>回复</span> {{citem.toCommentUserName}}
                                             </div>
@@ -208,7 +208,7 @@
                     //加载更多
                     this.commentList = this.commentList.concat(msg);
                 }
-                
+
                 this.hasMore = result.total>this.commentList.length
               },
           //选择表情包
@@ -306,7 +306,7 @@
               }
 
               //公用设置数据方法
-              
+
               if(that.$route.name=='DetailArticle'){//文章列表的评论
                   that.type = 0;
                   getArticleComment(that.queryParams).then((response)=>{

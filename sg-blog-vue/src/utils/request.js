@@ -17,16 +17,19 @@ const service = axios.create({
 })
 // request拦截器
 service.interceptors.request.use(config => {
-  // 是否需要设置 token
+  // 是否需要设置 token;
+  // config.headers不存在时,undefined.isToken会报错
   const isToken = (config.headers || {}).isToken === false
   if (getToken() && !isToken) {
     config.headers['token'] = getToken() // 让每个请求携带自定义token 请根据实际情况自行修改
   }
-  // get请求映射params参数
+  // get请求映射params参数；过滤null和undefined的参数；数组会被分成多个相同键的参数，例如：ids[1, 2, 3] =》 ?ids=1&ids=2&ids=3
+  // 与默认axios参数拼接不同，对于Object：原本是 obj={"key":"value"},经过这个过滤器会被拆开 -> ?key1=value1&key2=value2
   if (config.method === 'get' && config.params) {
     let url = config.url + '?'
     for (const propName of Object.keys(config.params)) {
       const value = config.params[propName]
+      // encodeURIComponent() 将字符串作为 URI 组件进行编码，以便在 URL 中使用
       var part = encodeURIComponent(propName) + '='
       if (value !== null && typeof (value) !== 'undefined') {
         if (typeof value === 'object') {
