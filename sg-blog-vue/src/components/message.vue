@@ -65,7 +65,7 @@
                                 <article class="">
                                     <header>
                                         <!-- 子评论头像 -->
-                                            <img :src="item.avatar || $store.state.errorImg"  :onerror="$store.state.errorImg" alt="">
+                                            <img :src="citem.avatar || $store.state.errorImg"  :onerror="$store.state.errorImg" alt="">
                                             <div class="i-name">
                                                 {{citem.username}} <span>回复</span> {{citem.toCommentUserName}}
                                             </div>
